@@ -95,9 +95,9 @@ app.all('*', (req, res, next) => {
 // This will catch any error that occurs in the app.
 // catchAsync will lead it to here as well.
 app.use((err, req, res, next) => {
-  const { message = 'Something went wrong', statusCode = 500 } = err;
-  res.status(statusCode).send(message);
-  res.send('Oh boy something went wrong!');
+  const { statusCode = 500 } = err;
+  if (!err.message) err.message = 'Oh No, Something Went Wrong!';
+  res.status(statusCode).render('error', { err });
 });
 
 app.listen(3000, () => {
