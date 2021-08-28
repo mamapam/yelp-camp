@@ -2,7 +2,7 @@
 <div class="row">
   <h1 class="text-center">New Campground</h1>
   <div class="col-6 offset-3">
-    <form action="/campgrounds" method="POST">
+    <form action="/campgrounds" method="POST" class="validated-form" novalidate>
       <div class="mb-3">
         <label for="title" class="form-label">Title</label>
         <input
@@ -10,7 +10,9 @@
           id="title"
           class="form-control"
           name="campground[title]"
+          required
         />
+        <div class="valid-feedback">Looks good!</div>
       </div>
       <div class="mb-3">
         <label for="image" class="form-label">Image Url</label>
@@ -19,7 +21,9 @@
           id="image"
           class="form-control"
           name="campground[image]"
+          required
         />
+        <div class="valid-feedback">Looks good!</div>
       </div>
       <div class="div mb-3">
         <label for="price" class="form-label">Price</label>
@@ -33,19 +37,21 @@
             aria-label="Price"
             aria-describedby="price-label"
             name="campground[price]"
+            required
           />
+          <div class="valid-feedback">Looks good!</div>
         </div>
       </div>
-
       <div class="mb-3">
-        <label for="description" class="form-label">Description</label>
+        <label class="form-label" for="description">Description</label>
         <textarea
+          class="form-control"
           type="text"
           id="description"
-          class="form-control"
           name="campground[description]"
-        >
-        </textarea>
+          required
+        ></textarea>
+        <div class="valid-feedback">Looks good!</div>
       </div>
       <div class="mb-3">
         <label for="location" class="form-label">Location</label>
@@ -54,7 +60,9 @@
           id="location"
           class="form-control"
           name="campground[location]"
+          required
         />
+        <div class="valid-feedback">Looks good!</div>
       </div>
       <div class="div mb-3">
         <button class="btn btn-success">Add Campground</button>
