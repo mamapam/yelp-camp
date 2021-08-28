@@ -1,6 +1,6 @@
 <% layout('layouts/boilerplate') %>
 <h1>Edit Campground</h1>
-<form action="/campgrounds/<%=campground._id%>?_method=PUT" method="POST">
+<form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST">
   <div>
     <label for="title">Title</label>
     <input
@@ -16,9 +16,9 @@
       type="text"
       id="location"
       name="campground[location]"
-      value="<%=campground.location%>"
+      value="<%= campground.location %>"
     />
   </div>
   <button>Update Campground</button>
 </form>
-<a href="/campgrounds/<%=campground._id%>">Back to Campground</a>
+<a href="/campgrounds/<%= campground._id %>">Back to Campground</a>
