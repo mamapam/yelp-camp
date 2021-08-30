@@ -32,9 +32,7 @@
       <span class="visually-hidden">Next</span>
     </button>
     <% } %>
-  </div>
 
-  <div class="col-6">
     <div class="card mb-3">
       <div class="card-body">
         <h5 class="card-title"><%= campground.title %></h5>
@@ -164,5 +162,6 @@
 
 <script>
   const mapToken = '<%- process.env.MAPBOX_TOKEN %>';
+  const campground = <%- JSON.stringify(campground.geometry) %>
 </script>
 <script src="/js/showPageMap.js"></script>
